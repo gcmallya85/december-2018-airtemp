@@ -18,7 +18,7 @@ x <- air_temp %>%
   filter(month(Date)==12) %>%
   mutate(doy = day(Date)) %>%
   group_by(doy) %>%
-  summarize(median_avg_air_temp = median(Air_Temp))
+  dplyr::summarize(median_avg_air_temp = median(Air_Temp))
 
 # To compute confidence bands (w.r.t medians)
 x0 <- air_temp %>% 
